@@ -111,7 +111,7 @@ Graph g = graph("example1").directed()
 Graphviz.fromGraph(g).height(100).render(Format.PNG).toFile(new File("example/ex1.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex1.png" height="100">
+<img src="./graphviz-java/example/ex1.png" height="100">
 
 - Global attributes are set using the `graphAttr`, `linkAttr` and `nodeAttr` methods.
 - Nodes are styled using the `with` method. 
@@ -134,7 +134,7 @@ MutableGraph g = mutGraph("example1").setDirected(true).add(
 Graphviz.fromGraph(g).width(200).render(Format.PNG).toFile(new File("example/ex1m.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex1m.png" width="100">
+<img src="./graphviz-java/example/ex1m.png" width="100">
 
 The mutable API provides similar functions as the immutable one with slightly different syntax:
 - `mutGraph` instead of `graph`, `mutNode` instead of `node`
@@ -165,7 +165,7 @@ digraph example1 {
     a -> b
 }
 ```
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex1i.png" width="100">
+<img src="./graphviz-java/example/ex1i.png" width="100">
 
 ### Kotlin DSL
 **Kotlin DSL is still experimental.** Things can change and any feedback is very welcome.
@@ -200,7 +200,7 @@ graph(directed = true) {
 }.toGraphviz().render(PNG).toFile(File("example/ex1.png"))
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-kotlin/example/ex1.png" width="500">
+<img src="./graphviz-kotlin/example/ex1.png" width="500">
 
 ## Parsing
 
@@ -222,7 +222,7 @@ graph {
     pink -- blue -- black
 }
 ```
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex4-1.png" width="400">
+<img src="./graphviz-java/example/ex4-1.png" width="400">
 
 Then running this program:
 
@@ -246,7 +246,7 @@ try (InputStream dot = getClass().getResourceAsStream("/color.dot")) {
 
 results in this graphics:
 
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex4-2.png" width="400">
+<img src="./graphviz-java/example/ex4-2.png" width="400">
 
 ## Examples
 
@@ -276,7 +276,7 @@ Graph g = graph("example2").directed().with(
 Graphviz.fromGraph(g).width(900).render(Format.PNG).toFile(new File("example/ex2.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex2.png" width="500">
+<img src="./graphviz-java/example/ex2.png" width="500">
 
 ### Example with records
 ```java
@@ -308,7 +308,7 @@ Graph g = graph("example3").directed()
 Graphviz.fromGraph(g).width(900).render(Format.PNG).toFile(new File("example/ex3.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex3.png" width="500">
+<img src="./graphviz-java/example/ex3.png" width="500">
 
 ## Images
 Images can be included in graphviz in two ways.
@@ -323,7 +323,7 @@ Graphviz g = Graphviz.fromGraph(graph()
 g.basedir(new File("example")).render(Format.PNG).toFile(new File("example/ex7.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex7.png" width="200">
+<img src="./graphviz-java/example/ex7.png" width="200">
 
 Because viz.js [does not support \<img> tags](https://github.com/mdaines/viz.js/issues/125),
 **this works only when using the command line engine**. 
@@ -337,7 +337,7 @@ Graphviz g = Graphviz.fromGraph(graph()
 g.basedir(new File("example")).render(Format.PNG).toFile(new File("example/ex8.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex8.png" width="200">
+<img src="./graphviz-java/example/ex8.png" width="200">
 
 This works with all engines.
 
@@ -360,9 +360,9 @@ String json = viz.engine(Engine.NEATO).render(Format.JSON).toString();
 BufferedImage image = viz.render(Format.PNG).toImage();
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex5.svg" width="100">
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex5b.png" width="100">
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex5s.png" width="100">
+<img src="./graphviz-java/example/ex5.svg" width="100">
+<img src="./graphviz-java/example/ex5b.png" width="100">
+<img src="./graphviz-java/example/ex5s.png" width="100">
 
 To rasterize with batik, provide this library on the classpath: 
 
@@ -392,7 +392,7 @@ Graphviz g = Graphviz.fromGraph(graph)
 g.render(Format.PNG).toFile(new File("example/ex9.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-java/example/ex9.png" width="200">
+<img src="./graphviz-java/example/ex9.png" width="200">
 
 ## Javadoc
 To use graphviz inside javadoc comments, add this to `pom.xml`:
@@ -475,4 +475,4 @@ Graphviz.fromGraph(g)
         .toFile(new File("example/ex1-rough.png"));
 ```
 [//]: # (end)
-<img src="https://rawgit.com/nidi3/graphviz-java/master/graphviz-rough/example/ex1-rough.png" width="200">
+<img src="./graphviz-rough/example/ex1-rough.png" width="200">
