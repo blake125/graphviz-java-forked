@@ -16,13 +16,18 @@
 package guru.nidi.graphviz.model;
 
 import guru.nidi.graphviz.engine.*;
+import guru.nidi.graphviz.parse.Parser;
+import org.apache.commons.lang3.mutable.Mutable;
 import org.junit.jupiter.api.*;
 
+import java.io.IOException;
+
 import static guru.nidi.graphviz.engine.Format.SVG;
+import static guru.nidi.graphviz.model.Factory.graph;
+import static guru.nidi.graphviz.model.Factory.mutNode;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SimpleTest {
     @BeforeAll
@@ -52,9 +57,24 @@ class SimpleTest {
         }
     }
 
+    //Test added by Blake Ranniker on 3/17/2026
     @Test
-    void removeTest() {
-        final Graphviz viz = Graphviz.fromString("digraph g { \"a\\b'c\" -> b; }");
-        MutableGraph g = graph
+    void removeNodeTest() throws IOException {
+        final MutableGraph g = new Parser().read("digraph g { \"a\b'c\" -> b; }");
+        final MutableNode a = mutNode("a");
+
+        g.remove(a);
+
+        final boolean nodeMissed = g.nodes().contains(a);
+
+        boolean edgeMissed = false;
+        for (final Link l : g.links()) {
+            if (l.to() == a || l.from() == a) {
+                edgeMissed = true;
+                break;
+            }
+        }
+
+        assertFalse(nodeMissed || edgeMissed);
     }
 }

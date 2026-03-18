@@ -138,18 +138,15 @@ public class MutableGraph implements LinkSource, LinkTarget {
         return this;
     }
 
+    //Method added by Blake Ranniker on 3/17/2026
     public boolean remove(MutableNode n) {
-        boolean removed = nodes.remove(n);
+        final boolean removed = nodes.remove(n);
 
-        if(removed) {
+        if (removed) {
             links.removeIf(l -> l.to() == n || l.from() == n);
         }
 
         return removed;
-    }
-
-    public boolean remove(Link l) {
-        return links.remove(l);
     }
 
     @Override
