@@ -57,17 +57,18 @@ class SimpleTest {
         }
     }
 
+    //Test added by Blake Ranniker on 3/17/2026
     @Test
     void removeNodeTest() throws IOException {
-        MutableGraph g = new Parser().read("digraph g { \"a\b'c\" -> b; }");
-        MutableNode a = mutNode("a");
+        final MutableGraph g = new Parser().read("digraph g { \"a\b'c\" -> b; }");
+        final MutableNode a = mutNode("a");
 
         g.remove(a);
 
-        boolean nodeMissed = g.nodes().contains(a);
+        final boolean nodeMissed = g.nodes().contains(a);
 
         boolean edgeMissed = false;
-        for (Link l : g.links()) {
+        for (final Link l : g.links()) {
             if (l.to() == a || l.from() == a) {
                 edgeMissed = true;
                 break;
@@ -75,10 +76,5 @@ class SimpleTest {
         }
 
         assertFalse(nodeMissed || edgeMissed);
-    }
-
-    @Test
-    void removeEdgeTest() throws IOException {
-        MutableGraph g = new Parser().read("digraph g { \"a\b'c\" -> b; }");
     }
 }

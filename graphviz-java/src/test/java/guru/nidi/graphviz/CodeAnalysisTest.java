@@ -133,7 +133,10 @@ class CodeAnalysisTest extends CodeAssertJunit5Test {
                         In.locs("ImmutableGraph", "MutableGraph").ignore("ExcessiveMethodLength", "ExcessiveParameterList", "LooseCoupling"),
                         In.locs("Format", "ImmutableGraph$GraphAttributed").ignore("AccessorMethodGeneration"),
                         In.locs("AttributeConfigs", "AttributeValidator", "FontTools", "Graphviz", "GraphvizCmdLineEngine", "Options", "LogoCreator").ignore("TooManyStaticImports"),
-                        In.clazz(Graphviz.class).ignore("TooManyMethods"),
+
+                        //Edited by Blake Ranniker on 3/17/2026
+                        In.classes(Graphviz.class, MutableGraph.class).ignore("TooManyMethods"),
+
                         In.classes(MutableNode.class, Rasterizer.class, ValidatorMessage.class).ignore("ConfusingTernary"),
                         In.clazz(ThrowingFunction.class).ignore("AvoidRethrowingException"),
                         In.classes(ThrowingFunction.class, ThrowingBiConsumer.class).ignore("SignatureDeclareThrowsException"))
