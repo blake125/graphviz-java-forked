@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>guru.nidi</groupId>
-        <artifactId>graphviz-java-parent</artifactId>
+        <groupId>io.github.blake125</groupId>
+        <artifactId>graphviz-java-forked-parent</artifactId>
         <version>0.18.2-SNAPSHOT</version>
     </parent>
 
-    <artifactId>graphviz-java</artifactId>
+    <artifactId>graphviz-java-forked</artifactId>
     <name>${project.artifactId}</name>
 
     <properties>

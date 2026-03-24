@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>guru.nidi</groupId>
-        <artifactId>graphviz-java-parent</artifactId>
+        <groupId>io.github.blake125</groupId>
+        <artifactId>graphviz-java-forked-parent</artifactId>
         <version>0.18.2-SNAPSHOT</version>
     </parent>
 
@@ -12,13 +12,13 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <module.name>guru.nidi.graphviz.rough</module.name>
+        <module.name>io.github.blake125.graphviz.rough</module.name>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>graphviz-java</artifactId>
+            <artifactId>graphviz-java-forked</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
