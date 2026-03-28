@@ -1,5 +1,5 @@
 /*
- * Copyright © 2015 Stefan Niederhauser (nidin@gmx.ch)
+ * Copyright © 2026 Stefan Niederhauser (nidin@gmx.ch)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,12 +60,15 @@ class SimpleTest {
     //Test added by Blake Ranniker on 3/17/2026
     @Test
     void removeNodeTest() throws IOException {
-        final MutableGraph g = new Parser().read("digraph g { \"a\b'c\" -> b; }");
+        final MutableGraph g = new Parser().read("digraph g { a -> b; b -> c; }");
         final MutableNode a = mutNode("a");
+
+        System.out.println(g.nodes());
 
         g.remove(a);
 
         final boolean nodeMissed = g.nodes().contains(a);
+        System.out.println(g.nodes());
 
         boolean edgeMissed = false;
         for (final Link l : g.links()) {
@@ -74,6 +77,8 @@ class SimpleTest {
                 break;
             }
         }
+
+        System.out.println(g.nodes());
 
         assertFalse(nodeMissed || edgeMissed);
     }

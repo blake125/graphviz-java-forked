@@ -1,5 +1,5 @@
 /*
- * Copyright © 2015 Stefan Niederhauser (nidin@gmx.ch)
+ * Copyright © 2026 Stefan Niederhauser (nidin@gmx.ch)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ public class MutableGraph implements LinkSource, LinkTarget {
 
     protected MutableGraph(boolean strict, boolean directed, boolean cluster, Label name,
                            LinkedHashSet<MutableNode> nodes, LinkedHashSet<MutableGraph> subgraphs, List<Link> links,
-                           @Nullable Attributes<? extends ForNode> nodeAttrs,
+                           @org.jetbrains.annotations.Nullable Attributes<? extends ForNode> nodeAttrs,
                            @Nullable Attributes<? extends ForLink> linkAttrs,
                            @Nullable Attributes<? extends ForGraph> graphAttrs) {
         this.strict = strict;

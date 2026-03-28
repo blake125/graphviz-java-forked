@@ -5,37 +5,73 @@
     <parent>
         <groupId>io.github.blake125</groupId>
         <artifactId>graphviz-java-forked-parent</artifactId>
-        <version>0.18.2-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <artifactId>graphviz-java-all-j2v8</artifactId>
-    <name>${project.artifactId}</name>
+    <name>graphviz-java-forked-all-j2v8</name>
+    <groupId>io.github.blake125</groupId>
+    <version>1.0</version>
+
+    <description>Graphviz-java-forked all</description>
 
     <properties>
-        <module.name>io.github.blake125.graphviz.allj2v8</module.name>
+        <module.name>io.github.blake125.graphviz_forked.alljv28</module.name>
     </properties>
+
+    <url>https://github.com/blake125/graphviz-java-forked</url>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>io.github.blake125</groupId>
             <artifactId>graphviz-java-forked</artifactId>
-            <version>${project.version}</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>guru.nidi.com.eclipsesource.j2v8</groupId>
             <artifactId>j2v8_macosx_x86_64</artifactId>
+            <version>${j2v8.version}</version>
         </dependency>
         <dependency>
             <groupId>guru.nidi.com.eclipsesource.j2v8</groupId>
             <artifactId>j2v8_linux_x86_64</artifactId>
+            <version>${j2v8.version}</version>
         </dependency>
         <dependency>
             <groupId>guru.nidi.com.eclipsesource.j2v8</groupId>
             <artifactId>j2v8_win32_x86_64</artifactId>
+            <version>${j2v8.version}</version>
         </dependency>
         <dependency>
             <groupId>guru.nidi.com.eclipsesource.j2v8</groupId>
             <artifactId>j2v8_win32_x86</artifactId>
+            <version>${j2v8.version}</version>
         </dependency>
     </dependencies>
+
+    <scm>
+        <connection>scm:git:https://github.com/blake125/graphviz-java-forked</connection>
+        <developerConnection>scm:git:https://github.com/blake125/graphviz-java-forked</developerConnection>
+        <url>https://github.com/blake125/graphviz-java-forked</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <comments>
+                Licensed under the Apache License, Version 2.0 (the "License");
+                you may not use this file except in compliance with the License.
+            </comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Blake Ranniker</name>
+            <email>blakeranniker@gmail.com</email>
+        </developer>
+    </developers>
+
 </project>

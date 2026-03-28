@@ -3,20 +3,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>guru.nidi</groupId>
-        <artifactId>guru-nidi-parent-pom</artifactId>
-        <version>1.1.36</version>
+        <groupId>io.github.blake125</groupId>
+        <artifactId>blake125-parent-pom</artifactId>
+        <version>1.0</version>
+        <relativePath>parent</relativePath>
     </parent>
 
     <groupId>io.github.blake125</groupId>
     <artifactId>graphviz-java-forked-parent</artifactId>
-    <version>0.18.2-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>${project.artifactId}</name>
+    <name>graphviz-java-forked</name>
     <description>Use graphviz in a pure java environment, forked!</description>
     <url>https://github.com/blake125/graphviz-java-forked</url>
-    <inceptionYear>2015</inceptionYear>
+    <inceptionYear>2026</inceptionYear>
 
     <properties>
         <suppressionFile>owasp-suppression.xml</suppressionFile>
@@ -30,7 +31,6 @@
         <module>graphviz-java</module>
         <module>graphviz-java-min-deps</module>
         <module>graphviz-java-all-j2v8</module>
-        <module>graphviz-rough</module>
     </modules>
 
     <scm>
@@ -44,6 +44,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>
@@ -73,6 +74,7 @@
         <dependency>
             <groupId>guru.nidi</groupId>
             <artifactId>code-assert</artifactId>
+            <version>${code-assert.version}</version>
         </dependency>
     </dependencies>
 
@@ -137,5 +139,50 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.2.0</version> <!-- Use the latest version -->
+                <configuration>
+                    <!-- License definition -->
+                    <license>
+                        <name>Apache License, Version 2.0</name>
+                        <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+                        <comments>
+                            Licensed under the Apache License, Version 2.0 (the "License");
+                            you may not use this file except in compliance with the License.
+                        </comments>
+                    </license>
+
+                    <owner>Blake Ranniker</owner>
+                    <year>2026</year>
+
+                    <!-- Maven properties for placeholder resolution -->
+                    <properties>
+                        <project.name>${project.name}</project.name>
+                        <project.version>${project.version}</project.version>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <comments>
+                Licensed under the Apache License, Version 2.0 (the "License");
+                you may not use this file except in compliance with the License.
+            </comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Blake Ranniker</name>
+            <email>blakeranniker@gmail.com</email>
+        </developer>
+    </developers>
 </project>
