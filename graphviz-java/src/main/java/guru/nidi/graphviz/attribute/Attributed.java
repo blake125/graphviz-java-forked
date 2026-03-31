@@ -21,6 +21,12 @@ import java.util.List;
 import static guru.nidi.graphviz.attribute.Attributes.attr;
 import static guru.nidi.graphviz.attribute.Attributes.attrs;
 
+/**
+ * Interface to declare that type <T> has attribute <F> 
+ * 
+ * @param <T> The class that is being assigned attribute <F> 
+ * @param <F> The attribute that is being assigned to <T> 
+ */
 public interface Attributed<T, F extends For> extends Attributes<F> {
     default T with(String name, @Nullable Object value) {
         return with(attr(name, value));

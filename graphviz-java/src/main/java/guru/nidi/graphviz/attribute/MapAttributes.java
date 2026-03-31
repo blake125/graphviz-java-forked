@@ -19,6 +19,9 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.Map.Entry;
 
+/**
+ * A map of attributes for a certain attribute <F> 
+ */
 public class MapAttributes<F extends For> implements Attributes<F>, Iterable<Entry<String, Object>> {
     protected final Map<String, Object> attributes;
 

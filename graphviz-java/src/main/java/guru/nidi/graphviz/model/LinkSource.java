@@ -19,6 +19,10 @@ import guru.nidi.graphviz.attribute.Named;
 
 import java.util.List;
 
+/**
+ * A place where links can originate from.
+ * In the context of directed graphs, it is the start. 
+ */
 public interface LinkSource extends Named {
     List<Link> links();
 

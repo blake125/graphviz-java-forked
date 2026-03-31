@@ -22,20 +22,39 @@ import java.util.Map.Entry;
 
 import static java.util.Arrays.asList;
 
+/**
+ * Utils to handle attributes (notice the static methods)
+ */
 public interface Attributes<F extends For> extends Iterable<Entry<String, Object>> {
+
+    /**
+     * @return a map of {String -> Objects} for a certain attribute <F>
+     */
     static <F extends For> Attributes<F> attr(String key, @Nullable Object value) {
         return new MapAttributes<F>(key, value);
     }
 
+    /**
+     * implementation 1
+     * @return an empty MapAttributes of unspecified type?
+     */
     static <F extends For> Attributes<F> attrs() {
         return new MapAttributes<>();
     }
 
     @SafeVarargs
+    /**
+     * implementation 2
+     * @return an empty MapAttributes of unspecified type?
+     */
     static <F extends For> Attributes<F> attrs(Attributes<? extends F>... attributes) {
         return attrs(asList(attributes));
     }
 
+    /**
+     * implementation 3
+     * @return an empty MapAttributes of unspecified type?
+     */
     static <F extends For> Attributes<F> attrs(List<Attributes<? extends F>> attributes) {
         final MapAttributes<F> res = new MapAttributes<>();
         for (Attributes<? extends F> attribute : attributes) {
@@ -59,6 +78,11 @@ public interface Attributes<F extends For> extends Iterable<Entry<String, Object
         return copy;
     }
 
+    /**
+     * Gets the object that key maps to
+     * @param key the key to index the object for
+     * @return nullable object if key does not have a value
+     */
     @Nullable
     default Object get(String key) {
         return applyTo(new MapAttributes<>()).get(key);

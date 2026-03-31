@@ -23,6 +23,9 @@ import java.util.Map.Entry;
 
 import static java.util.Arrays.asList;
 
+/**
+ * Mutable graph objects
+ */
 public class MutableGraph implements LinkSource, LinkTarget {
     private static final SafeRecursion<MutableGraph> RECURSION = new SafeRecursion<>();
     private static final String CONTEXT = "$context";

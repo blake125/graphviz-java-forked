@@ -17,6 +17,9 @@ package guru.nidi.graphviz.model;
 
 import guru.nidi.graphviz.attribute.Named;
 
+/**
+ * Interface for what links can point to. 
+ */
 public interface LinkTarget extends Named {
     Link linkTo();
 

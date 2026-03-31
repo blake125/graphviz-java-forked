@@ -17,6 +17,8 @@ package guru.nidi.graphviz.attribute;
 
 /**
  * Marker to define which elements (graph, node, link) an Attribute can be used for.
+ * 
+ * These interfaces define attributes that certain classes may have. 
  */
 public interface For {
 }

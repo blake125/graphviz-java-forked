@@ -20,12 +20,23 @@ import guru.nidi.graphviz.attribute.*;
 import javax.annotation.Nullable;
 import java.util.Objects;
 
+/**
+ * circular dependency spotted
+ * Link uses LinkTarget
+ * and LinkTarget depends on Link
+ * 
+ * May represent a directed or undirected edge, whichever is specified
+ */
 public final class Link implements Attributed<Link, ForLink>, LinkTarget {
     @Nullable
     final LinkSource from;
     final LinkTarget to;
     final MutableAttributed<Link, ForLink> attributes;
 
+    /**
+     * defines that the link points to node, I think
+     * @param node the target of the link
+     */
     public static Link to(MutableNode node) {
         return to(node.port((String) null));
     }

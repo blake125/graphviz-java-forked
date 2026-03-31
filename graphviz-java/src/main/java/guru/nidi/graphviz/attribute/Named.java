@@ -15,6 +15,9 @@
  */
 package guru.nidi.graphviz.attribute;
 
+/**
+ * Interface for objects that have a name() function.
+ */
 public interface Named {
     Label name();
 }

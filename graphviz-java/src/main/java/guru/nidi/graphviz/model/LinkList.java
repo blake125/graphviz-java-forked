@@ -19,6 +19,9 @@ import java.util.*;
 
 import static java.util.stream.Collectors.toList;
 
+/**
+ * A special ArrayList specialized to handle Links, apparently
+ */
 class LinkList extends ArrayList<Link> {
     private final LinkSource owner;
 
