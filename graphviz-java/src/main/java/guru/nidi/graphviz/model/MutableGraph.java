@@ -143,7 +143,7 @@ public class MutableGraph implements LinkSource, LinkTarget {
         final boolean removed = nodes.remove(node);
 
         for (final MutableNode n : nodes) {
-            n.links.removeIf(l -> ((ImmutablePortNode) l.to).node() == node || l.from() == node);
+            n.links.removeIf(l -> ((ImmutablePortNode) l.to).node().equals(node) || l.from().equals(node));
         }
 
         return removed;
