@@ -5,14 +5,12 @@
     <parent>
         <groupId>io.github.blake125</groupId>
         <artifactId>graphviz-java-forked-parent</artifactId>
-        <version>1.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>graphviz-java-min-deps</artifactId>
     <name>graphviz-java-min-deps</name>
     <description>Minimum dependencies</description>
-    <groupId>io.github.blake125</groupId>
-    <version>1.0</version>
 
     <url>https://github.com/blake125/graphviz-java-forked</url>
 

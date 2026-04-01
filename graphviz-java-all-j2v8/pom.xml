@@ -5,13 +5,11 @@
     <parent>
         <groupId>io.github.blake125</groupId>
         <artifactId>graphviz-java-forked-parent</artifactId>
-        <version>1.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>graphviz-java-all-j2v8</artifactId>
     <name>graphviz-java-forked-all-j2v8</name>
-    <groupId>io.github.blake125</groupId>
-    <version>1.0</version>
 
     <description>Graphviz-java-forked all</description>
 

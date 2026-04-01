@@ -63,9 +63,11 @@ class SimpleTest {
         final MutableGraph g = new Parser().read("digraph g { }");
         final MutableNode t = mutNode("testNode");
         final MutableNode t1 = mutNode("testNodeFriend");
+        final MutableNode t2 = mutNode("testNodeFriend's friend");
 
-        g.add(t, t1);
+        g.add(t, t1, t2);
         t1.addLink(t);
+        t2.addLink(t1);
 
         System.out.println(g.nodes());
         g.remove(t);
@@ -84,7 +86,7 @@ class SimpleTest {
         assertFalse(edgeMissed || nodeMissed);
     }
 
-    //Test added by Blake Ranniker on 3/17/2026
+    //Test added by Blake Ranniker on 3/31/2026
     @Test
     void removeLinkTest() throws IOException {
         final MutableGraph g = new Parser().read("digraph g { }");
@@ -93,11 +95,12 @@ class SimpleTest {
         final MutableNode t1 = mutNode("testNodeFriend");
 
         g.add(t, t1);
+
         final Link l = t.linkTo(t1);
 
         t.addLink(l);
 
-        g.remove(t, l);
+        t.removeLink(t1);
         assertFalse(t.links.contains(l));
     }
 }

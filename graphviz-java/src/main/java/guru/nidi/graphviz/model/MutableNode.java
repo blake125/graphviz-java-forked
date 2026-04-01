@@ -1,5 +1,5 @@
 /*
- * Copyright © 2026 Stefan Niederhauser (nidin@gmx.ch)
+ * Copyright © 2015 Stefan Niederhauser (nidin@gmx.ch)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,6 +174,10 @@ public class MutableNode implements MutableAttributed<MutableNode, ForNode>, Lin
     @Override
     public List<Link> links() {
         return links;
+    }
+
+    public boolean removeLink(MutableNode dest) {
+        return this.links.removeIf(l -> ((ImmutablePortNode) l.to).node() == dest);
     }
 
     public MutableAttributed<MutableNode, ForNode> attrs() {

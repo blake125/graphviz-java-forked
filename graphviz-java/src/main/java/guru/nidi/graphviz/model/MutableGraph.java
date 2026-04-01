@@ -1,5 +1,5 @@
 /*
- * Copyright © 2026 Stefan Niederhauser (nidin@gmx.ch)
+ * Copyright © 2015 Stefan Niederhauser (nidin@gmx.ch)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,14 +143,10 @@ public class MutableGraph implements LinkSource, LinkTarget {
         final boolean removed = nodes.remove(node);
 
         for (final MutableNode n : nodes) {
-            n.links.removeIf(l -> l.to() == n || l.from() == n);
+            n.links.removeIf(l -> ((ImmutablePortNode) l.to).node() == node || l.from() == node);
         }
 
         return removed;
-    }
-
-    public boolean remove(MutableNode src, Link l) {
-        return src.links.remove(l);
     }
 
     @Override
