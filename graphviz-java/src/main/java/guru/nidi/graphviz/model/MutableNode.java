@@ -196,7 +196,7 @@ public class MutableNode implements MutableAttributed<MutableNode, ForNode>, Lin
 
     @Override
     public int hashCode() {
-        return RECURSION.recurse(this, 0, () -> Objects.hash(name, links, attributes));
+        return RECURSION.recurse(this, 0, () -> Objects.hash(name, attributes));
     }
 
     @Override

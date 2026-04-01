@@ -9,9 +9,7 @@
         <relativePath>parent</relativePath>
     </parent>
 
-    <groupId>io.github.blake125</groupId>
     <artifactId>graphviz-java-forked-parent</artifactId>
-    <version>1.0</version>
     <packaging>pom</packaging>
 
     <name>graphviz-java-forked</name>
@@ -144,26 +142,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
                 <version>2.2.0</version> <!-- Use the latest version -->
-                <configuration>
-                    <!-- License definition -->
-                    <license>
-                        <name>Apache License, Version 2.0</name>
-                        <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-                        <comments>
-                            Licensed under the Apache License, Version 2.0 (the "License");
-                            you may not use this file except in compliance with the License.
-                        </comments>
-                    </license>
-
-                    <owner>Blake Ranniker</owner>
-                    <year>2026</year>
-
-                    <!-- Maven properties for placeholder resolution -->
-                    <properties>
-                        <project.name>${project.name}</project.name>
-                        <project.version>${project.version}</project.version>
-                    </properties>
-                </configuration>
             </plugin>
         </plugins>
     </build>
