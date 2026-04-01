@@ -177,7 +177,7 @@ public class MutableNode implements MutableAttributed<MutableNode, ForNode>, Lin
     }
 
     public boolean removeLink(MutableNode dest) {
-        return this.links.removeIf(l -> ((ImmutablePortNode) l.to).node() == dest);
+        return this.links.removeIf(l -> ((ImmutablePortNode) l.to).node().equals(dest));
     }
 
     public MutableAttributed<MutableNode, ForNode> attrs() {
